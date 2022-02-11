@@ -25,7 +25,7 @@
     "pre-build": "rollup -c && uglifyjs dist/d3.js -c -m -o dist/d3.min.js",
     "build": "npm run pre-build && webpack && cp dist/index.js test/react-mindmap.js",
     "prepare": "npm run build && rm dist/d3.min.js dist/d3.js",
-    "test": "npm run build && cp dist/index.js test/react-mindmap.js && cd test && static-server -p 3000"
+    "test": "npm run build && cp dist/index.js test/react-mindmap.js && cd test && static-server -p 8080"
   },
   "dependencies": {
     "d3": "^4.9.1",

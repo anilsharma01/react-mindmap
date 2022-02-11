@@ -33,7 +33,7 @@ export default class MindMap extends Component {
     const simulation = forceSimulation()
       .force('link', forceLink().id(node => node.text))
       .force('charge', forceManyBody())
-      .force('collide', forceCollide().radius(100));
+      .force('collide', forceCollide());
 
     this.state = { simulation };
   }
@@ -125,6 +125,7 @@ export default class MindMap extends Component {
   }
 
   componentDidMount() {
+    console.log('custom console log');
     this.renderMap();
   }
 
