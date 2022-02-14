@@ -4052,7 +4052,7 @@ var subnodesToHTML = function subnodesToHTML() {
       emoji = '';
     }
 
-    return '<div class="mindmap-subnode-group" ' + color + '>\n      <a title="' + subnode.title + '" ' + href + '>' + (subnode.text || '') + ' ' + emoji + '</a>\n      <div>' + subnodesToHTML(subnode.nodes, color) + '</div>\n    </div>';
+    return '<div class="mindmap-subnode-group" ' + color + '>\n      <a title="' + (subnode.title || '') + '" data-tip="' + (subnode.title || '') + '" ' + href + '>' + (subnode.text || '') + ' ' + emoji + '</a>\n      <div>' + subnodesToHTML(subnode.nodes, color) + '</div>\n    </div>';
   }).join('');
 };
 
