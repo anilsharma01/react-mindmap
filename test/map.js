@@ -71,7 +71,8 @@ const map = {
           "color": "rgba(34, 205, 224, 1.0)"
         },
         {
-          "text": "scientific python cheat sheet",
+          "text": "scientific python...",
+          "title": "scientific python cheat sheet",
           "url": "https://ipgp.github.io/scientific_python_cheat_sheet/",
           "fx": 291.3247731601375,
           "fy": -392.23700786748157,

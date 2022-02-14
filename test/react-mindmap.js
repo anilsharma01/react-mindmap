@@ -4044,7 +4044,6 @@ var subnodesToHTML = function subnodesToHTML() {
   }
 
   return subnodes.map(function (subnode) {
-    console.log('check subnode', subnode);
     var href = 'href="' + subnode.url + '"';
     var emoji = (0, _emojis.categoryToIMG)(subnode.category);
 
@@ -4053,7 +4052,7 @@ var subnodesToHTML = function subnodesToHTML() {
       emoji = '';
     }
 
-    return '<div class="mindmap-subnode-group" ' + color + '>\n      <a title="' + subnode.text + '" ' + href + '>' + (subnode.text || '') + ' ' + emoji + '</a>\n      <div>' + subnodesToHTML(subnode.nodes, color) + '</div>\n    </div>';
+    return '<div class="mindmap-subnode-group" ' + color + '>\n      <a title="' + subnode.title + '" ' + href + '>' + (subnode.text || '') + ' ' + emoji + '</a>\n      <div>' + subnodesToHTML(subnode.nodes, color) + '</div>\n    </div>';
   }).join('');
 };
 

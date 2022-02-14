@@ -22,7 +22,7 @@ const subnodesToHTML = (subnodes = [], fcolor) => {
     }
 
     return `<div class="mindmap-subnode-group" ${color}>
-      <a title="${subnode.text}" ${href}>${subnode.text || ''} ${emoji}</a>
+      <a title="${subnode.title}" ${href}>${subnode.text || ''} ${emoji}</a>
       <div>${subnodesToHTML(subnode.nodes, color)}</div>
     </div>`;
   }).join('');
