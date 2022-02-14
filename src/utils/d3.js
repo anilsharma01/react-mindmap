@@ -120,7 +120,7 @@ export const d3Drag = (simulation, svg, nodes) => {
  * Return pan and zoom behavior to use on d3.selection.call().
  */
 export const d3PanZoom = el => (
-  zoom().scaleExtent([0.3, 5])
+  zoom().scaleExtent([0.3, 20])
     .on('zoom', () => (
       el.selectAll('svg > g').attr('transform', event.transform)
     ))

@@ -4010,7 +4010,7 @@ var d3Drag = exports.d3Drag = function d3Drag(simulation, svg, nodes) {
  * Return pan and zoom behavior to use on d3.selection.call().
  */
 var d3PanZoom = exports.d3PanZoom = function d3PanZoom(el) {
-  return (0, _d.zoom)().scaleExtent([0.3, 5]).on('zoom', function () {
+  return (0, _d.zoom)().scaleExtent([0.3, 100]).on('zoom', function () {
     return el.selectAll('svg > g').attr('transform', _d.event.transform);
   });
 };
@@ -4052,7 +4052,7 @@ var subnodesToHTML = function subnodesToHTML() {
       emoji = '';
     }
 
-    return '<div class="mindmap-subnode-group" ' + color + '>\n      <a title="' + (subnode.title || '') + '" data-tip="' + (subnode.title || '') + '" ' + href + '>' + (subnode.text || '') + ' ' + emoji + '</a>\n      <div>' + subnodesToHTML(subnode.nodes, color) + '</div>\n    </div>';
+    return '<div class="mindmap-subnode-group" ' + color + '>\n      <a data-tip="' + (subnode.title || '') + '" ' + href + '>' + (subnode.text || '') + ' ' + emoji + '</a>\n      <div>' + subnodesToHTML(subnode.nodes, color) + '</div>\n    </div>';
   }).join('');
 };
 
