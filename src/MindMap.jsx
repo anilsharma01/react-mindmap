@@ -48,9 +48,8 @@ export default class MindMap extends Component {
       node.nodesHTML = subnodesToHTML(node.nodes);
 
       const dimensions = getDimensions(node.html, {}, 'mindmap-node');
-      node.width = dimensions.width;
-      node.height = dimensions.height;
-
+      node.width = dimensions.width + 10;
+      node.height = dimensions.height + 15;
       const nodesDimensions = getDimensions(node.nodesHTML, {}, 'mindmap-subnode-text');
       node.nodesWidth = nodesDimensions.width;
       node.nodesHeight = nodesDimensions.height;

@@ -2600,9 +2600,8 @@ var MindMap = function (_Component) {
         node.nodesHTML = (0, _subnodesToHTML2.default)(node.nodes);
 
         var dimensions = (0, _dimensions.getDimensions)(node.html, {}, 'mindmap-node');
-        node.width = dimensions.width;
-        node.height = dimensions.height;
-
+        node.width = dimensions.width + 10;
+        node.height = dimensions.height + 15;
         var nodesDimensions = (0, _dimensions.getDimensions)(node.nodesHTML, {}, 'mindmap-subnode-text');
         node.nodesWidth = nodesDimensions.width;
         node.nodesHeight = nodesDimensions.height;
@@ -4045,6 +4044,7 @@ var subnodesToHTML = function subnodesToHTML() {
   }
 
   return subnodes.map(function (subnode) {
+    console.log('check subnode', subnode);
     var href = 'href="' + subnode.url + '"';
     var emoji = (0, _emojis.categoryToIMG)(subnode.category);
 
@@ -4053,7 +4053,7 @@ var subnodesToHTML = function subnodesToHTML() {
       emoji = '';
     }
 
-    return '<div class="mindmap-subnode-group" ' + color + '>\n      <a ' + href + '>' + (subnode.text || '') + ' ' + emoji + '</a>\n      <div>' + subnodesToHTML(subnode.nodes, color) + '</div>\n    </div>';
+    return '<div class="mindmap-subnode-group" ' + color + '>\n      <a title="' + subnode.text + '" ' + href + '>' + (subnode.text || '') + ' ' + emoji + '</a>\n      <div>' + subnodesToHTML(subnode.nodes, color) + '</div>\n    </div>';
   }).join('');
 };
 
